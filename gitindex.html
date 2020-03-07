@@ -3,12 +3,11 @@
 
 <head>
     <script>
-        var videos = ["https://www.youtube.com/embed/9bZkp7q19f0", "https://www.youtube.com/embed/dQw4w9WgXcQ"];
+        var videos = ["https://www.youtube.com/embed/9bZkp7q19f0?autoplay=1", "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"];
         window.onload = function () {
             var playerDiv = document.getElementById("random_player");
             var player = document.createElement("IFRAME");
             var randomVideoUrl = videos[Math.floor(Math.random() * videos.length)];
-            player.setAttribute('autoplay', '1');
             player.setAttribute('width', '640');
             player.setAttribute('height', '390');
             player.setAttribute('src', randomVideoUrl);
