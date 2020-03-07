@@ -22,7 +22,7 @@
   function execute() {
     return gapi.client.youtube.channels.list({
       "part": "snippet,contentDetails,statistics",
-      "forUsername": "David Dobrik"
+      "forUsername": "DavidDobrik"
     })
         .then(function(response) {
                 // Handle the results here (response.result has the parsed body).
