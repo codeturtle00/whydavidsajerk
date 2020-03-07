@@ -8,6 +8,7 @@
             var playerDiv = document.getElementById("random_player");
             var player = document.createElement("IFRAME");
             var randomVideoUrl = videos[Math.floor(Math.random() * videos.length)];
+            player.setAttribute('autoplay', '1');
             player.setAttribute('width', '640');
             player.setAttribute('height', '390');
             player.setAttribute('src', randomVideoUrl);
