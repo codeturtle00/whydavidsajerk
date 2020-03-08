@@ -20,15 +20,20 @@
   }
   // Make sure the client is loaded and sign-in is complete before calling this method.
   function execute() {
-    return gapi.client.youtube.search.list({
+    var results = gapi.client.youtube.search.list({
       "part": "snippet",
       "maxResults": 50,
       "channelId" : "UCmh5gdwCx6lN7gEC20leNVA"
     })
+    for(var i in results.items) {
+      var item = results.items[i];
+      Logger.log('[%s] Title: %s', item.id.videoId, item.snippet.title);
+    }
+    return results
+    
         .then(function(response) {
                 // Handle the results here (response.result has the parsed body).
                 console.log("Response", response);
-                console.log("Response.results", response.items);
               },
               function(err) { console.error("Execute error", err); });
   }
