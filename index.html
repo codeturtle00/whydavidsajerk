@@ -25,6 +25,7 @@
       "maxResults": 50,
       "channelId" : "UCmh5gdwCx6lN7gEC20leNVA"
     })
+    console.log("Response", results.items);
     for(var i in results.items) {
       var item = results.items[i];
       console.log('[%s] Title: %s', item.id.videoId, item.snippet.title);
