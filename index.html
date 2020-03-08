@@ -28,8 +28,7 @@
         .then(function(response) {
                 // Handle the results here (response.result has the parsed body).
                 console.log("Response", response);
-                json = JSON.parse(response);
-                console.log("Response.results", json.items);
+                console.log("Response.results", response.items);
               },
               function(err) { console.error("Execute error", err); });
   }
