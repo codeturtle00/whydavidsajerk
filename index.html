@@ -27,11 +27,12 @@
     })
         .then(function(response) {
                 // Handle the results here (response.result has the parsed body).
-                console.log("Response", response);
-                console.log("response.result", response.result);
-                console.log("First Video ID", response.result.items[0].id.videoId);
+                // -- console.log used for debugging --
+                // console.log("Response", response);
+                // console.log("response.result", response.result);
+                // console.log("First Video ID", response.result.items[0].id.videoId);
                 var videos = response.result.items;
-                var playerDiv = document.getElementById("random_player");
+                var playerDiv = document.getElementById("random_player"); // where in HTML to embed YouTube video
                 var player = document.createElement("IFRAME");
                 var randomVideoID = videos[Math.floor(Math.random() * videos.length)].id.videoId;
                 console.log("randomVideoID", randomVideoID)
