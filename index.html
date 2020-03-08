@@ -27,10 +27,10 @@
     })
     for(var i in results.items) {
       var item = results.items[i];
-      Logger.log('[%s] Title: %s', item.id.videoId, item.snippet.title);
+      console.log('[%s] Title: %s', item.id.videoId, item.snippet.title);
     }
     return results
-    
+
         .then(function(response) {
                 // Handle the results here (response.result has the parsed body).
                 console.log("Response", response);
