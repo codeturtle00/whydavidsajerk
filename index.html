@@ -20,6 +20,21 @@
   }
   // Make sure the client is loaded and sign-in is complete before calling this method.
   function execute() {
+  	var settings = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://wordsapiv1.p.rapidapi.com/words/hatchback/typeOf",
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "wordsapiv1.p.rapidapi.com",
+		"x-rapidapi-key": "164a8eeda3mshf27f5fe0daf3b8dp1e2915jsn05608b11cc14"
+	}
+}
+
+$.ajax(settings).done(function (response) {
+	console.log(response);
+});
+  	
     return gapi.client.youtube.search.list({
       "part": "snippet",
       "maxResults": 50,
