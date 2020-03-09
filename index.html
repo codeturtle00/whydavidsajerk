@@ -21,7 +21,7 @@
   }
   // Make sure the client is loaded and sign-in is complete before calling this method.
   function call(){
-  	
+  	var numSentences = 20;
   	
 	var wordsInTitle = [];
 	len = videos.length;
@@ -30,23 +30,27 @@
 		var words = title.split(" ");
 		lenn = words.length;
 		for (j = 0; j<lenn; j++){
-			wordsInTitle.push(words[j].trim(" !()!@#$%^&"));
+			wordsInTitle.push(words[j].trim(" !(@)#$%^&"));
 		}
 	}
 
-	var randomSenHeader = document.getElementById("randomSenh1");
+	var randomSenDiv = document.getElementById("randomSentences");
+	for (i = 0; i<numSentences; i++){
 
-	str = "Because ";
-	for (i = 0; i<5; i++){
-		str += " " + randomWordFromList(wordsInTitle);
+		var sentenceh1 = document.createElement("h1");
+		randomSenDiv.appendChild(sentenceh1);
+		str = "Whys David Dobrik a Jerk? Because ";
+		for (i = 0; i<5; i++){
+			str += " " + randomWordFromList(wordsInTitle);
 
-	} 
-	randomSenHeader.innerHTML = str;
+		} 
+		sentenceh1.innerHTML = str;
+	}
+	
 
   }
 
   function randomWordFromList(arr){
-
   	return arr[Math.floor(Math.random() * arr.length)]
   }
 
@@ -84,7 +88,7 @@
 <button onclick="authenticate().then(loadClient)">authorize and load</button>
 <button onclick="execute()">execute</button>
 <button onclick="call()">call</button>
-<h1 id = "randomSenh1">h1</h1>
+<div id="randomSentences"/>
 <body>
   <div id="random_player" />
 </body>
