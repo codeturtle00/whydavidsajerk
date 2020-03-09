@@ -30,13 +30,23 @@
 		var words = title.split(" ");
 		lenn = words.length;
 		for (j = 0; j<lenn; j++){
-			wordsInTitle.push(words[j]);
+			wordsInTitle.push(words[j].trim(" !()!@#$%^&"));
 		}
 	}
 
 	var randomSenHeader = document.getElementById("randomSenh1");
-	randomSenHeader.innerHTML = "Because :" + wordsInTitle[Math.floor(Math.random() * wordsInTitle.length)] + wordsInTitle[Math.floor(Math.random() * wordsInTitle.length)] + wordsInTitle[Math.floor(Math.random() * wordsInTitle.length)];
 
+	str = "Because :";
+	for (i = 0; i<5; i++){
+		str += randomWordFromList(wordsInTitle);
+	} 
+	randomSenHeader.innerHTML = str;
+
+  }
+
+  function randomWordFromList(arr){
+
+  	return arr[Math.floor(Math.random() * arr.length)]
   }
 
   function execute() {
