@@ -19,7 +19,7 @@
               function(err) { console.error("Error loading GAPI client for API", err); });
   }
   // Make sure the client is loaded and sign-in is complete before calling this method.
-  function execute() {
+  function call(){
   	fetch("https://wordsapiv1.p.rapidapi.com/words/hatchback/typeOf", {
 	"method": "GET",
 	"headers": {
@@ -33,6 +33,15 @@
 .catch(err => {
 	console.log(err);
 });
+  }
+
+  function execute() {
+
+    return gapi.client.youtube.search.list({
+      "part": "snippet",
+      "maxResults": 50,
+      "channelId" : "UCmh5gdwCx6lN7gEC20leNVA"
+    })
         .then(function(response) {
                 // Handle the results here (response.result has the parsed body).
                 // -- console.log used for debugging --
@@ -58,6 +67,7 @@
 </script>
 <button onclick="authenticate().then(loadClient)">authorize and load</button>
 <button onclick="execute()">execute</button>
+<button onclick="call()">call</button>
 <body>
   <div id="random_player" />
 </body>
