@@ -34,11 +34,19 @@
 	.catch(err => {
 		console.log(err);
 	});
+	var wordsInTitle;
+
 	for (i = 0; len = videos.length; i++){
 		var title = videos[i].snippet.title
 		var words = title.split(" ");
-		console.log(words);
+		for (j = 0; len = words.length; j++){
+			wordsInTitle.push(words[j]);
+		}
 	}
+
+	var randomSenHeader = document.getElementById("randomSenh1");
+	randomSenHeader.innerHTML = "Because :" + wordsInTitle[Math.floor(Math.random() * wordsInTitle.length)] + wordsInTitle[Math.floor(Math.random() * wordsInTitle.length)] + wordsInTitle[Math.floor(Math.random() * wordsInTitle.length)];
+
   }
 
   function execute() {
@@ -75,6 +83,7 @@
 <button onclick="authenticate().then(loadClient)">authorize and load</button>
 <button onclick="execute()">execute</button>
 <button onclick="call()">call</button>
+<h1 id = "randomSenh1"></h1>
 <body>
   <div id="random_player" />
 </body>
