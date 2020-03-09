@@ -36,9 +36,10 @@
 
 	var randomSenHeader = document.getElementById("randomSenh1");
 
-	str = "Because :";
+	str = "Because ";
 	for (i = 0; i<5; i++){
-		str += randomWordFromList(wordsInTitle);
+		str += " " + randomWordFromList(wordsInTitle);
+
 	} 
 	randomSenHeader.innerHTML = str;
 
