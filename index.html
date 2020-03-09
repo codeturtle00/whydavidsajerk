@@ -21,6 +21,7 @@
   }
   // Make sure the client is loaded and sign-in is complete before calling this method.
   function call(){
+  	*/
   	fetch("https://wordsapiv1.p.rapidapi.com/words/example", {
 	"method": "GET",
 	"headers": {
@@ -33,13 +34,13 @@
 	})
 	.catch(err => {
 		console.log(err);
-	});
+	});*/
 	var wordsInTitle;
 
-	for (i = 0; len = videos.length; i++){
+	for (i = 0; len = videos.length;i<len; i++){
 		var title = videos[i].snippet.title
 		var words = title.split(" ");
-		for (j = 0; len = words.length; j++){
+		for (j = 0; lenn = words.length; j<lenn j++){
 			wordsInTitle.push(words[j]);
 		}
 	}
@@ -83,7 +84,7 @@
 <button onclick="authenticate().then(loadClient)">authorize and load</button>
 <button onclick="execute()">execute</button>
 <button onclick="call()">call</button>
-<h1 id = "randomSenh1"></h1>
+<h1 id = "randomSenh1">h1</h1>
 <body>
   <div id="random_player" />
 </body>
