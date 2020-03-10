@@ -5,7 +5,7 @@
    * See instructions for running APIs Explorer code samples locally:
    * https://developers.google.com/explorer-help/guides/code_samples#javascript
    */
-  
+   
 
   function authenticate() {
     return gapi.auth2.getAuthInstance()
@@ -21,7 +21,7 @@
   }
   // Make sure the client is loaded and sign-in is complete before calling this method.
   function call(){
-  	var numSentences = 20;
+  	
   	
 	var wordsInTitle = [];
 	len = videos.length;
@@ -30,23 +30,18 @@
 		var words = title.split(" ");
 		lenn = words.length;
 		for (j = 0; j<lenn; j++){
-			wordsInTitle.push(words[j].trim(" !(@)#$%^&"));
+			wordsInTitle.push(words[j].trim(" !()!@#$%^&"));
 		}
 	}
 
-	var randomSenDiv = document.getElementById("randomSentences");
-	for (i = 0; i<numSentences; i++){
+	var randomSenHeader = document.getElementById("randomSenh1");
 
-		var sentenceh1 = document.createElement("h1");
-		randomSenDiv.appendChild(sentenceh1);
-		str = "Whys David Dobrik a Jerk? Because ";
-		for (i = 0; i<5; i++){
-			str += " " + randomWordFromList(wordsInTitle);
+	str = "Whys David Dobrik a Jerk? Because ";
+	for (i = 0; i<5; i++){
+		str += " " + randomWordFromList(wordsInTitle);
 
-		} 
-		sentenceh1.innerHTML = str;
-	}
-	
+	} 
+	randomSenHeader.innerHTML = str;
 
   }
 
@@ -88,7 +83,8 @@
 <button onclick="authenticate().then(loadClient)">authorize and load</button>
 <button onclick="execute()">execute</button>
 <button onclick="call()">call</button>
-<div id="randomSentences"/>
+
+<h1 id = "randomSenh1">Click call after auth and execute to see this change</h1>
 <body>
   <div id="random_player" />
 </body>
