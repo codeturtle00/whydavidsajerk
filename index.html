@@ -21,7 +21,7 @@
   }
   // Make sure the client is loaded and sign-in is complete before calling this method.
   function call(){
-  	var numSentences = 20;
+  	var numSentences = 10;
   	
 	var wordsInTitle = [];
 	len = videos.length;
@@ -32,11 +32,12 @@
 		
 	}
 
+	console.log(wordsInTitle);
 	var randomSenHeaderDiv = document.getElementById("randomHeaders");
 
 	for (j = 0; j<numSentences; j++){
 		str = "Whys David Dobrik a Jerk? Because ";
-		for (k = 0; k<5; k++){
+		for (k = 0; k<3; k++){
 			str += " " + randomWordFromList(wordsInTitle);
 
 		} 
