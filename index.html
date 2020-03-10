@@ -26,19 +26,17 @@
 	var wordsInTitle = [];
 	len = videos.length;
 	for (i = 0; i<len; i++){
-		var title = videos[i].snippet.title
-		var words = title.split(" ");
-		lenn = words.length;
-		for (j = 0; j<lenn; j++){
-			wordsInTitle.push(words[j].trim(" !(@)#$%^&"));
-		}
+		titleOfVideo = videos[i].snippet.title;
+		const regex = /[A-Za-z]+/gi;
+		var wordsInTitle.push(titleOfVideo.match(regex));
+		
 	}
 
 	var randomSenHeaderDiv = document.getElementById("randomHeaders");
 
 	for (j = 0; j<numSentences; j++){
 		str = "Whys David Dobrik a Jerk? Because ";
-		for (k = 0; k<3; k++){
+		for (k = 0; k<5; k++){
 			str += " " + randomWordFromList(wordsInTitle);
 
 		} 
@@ -90,7 +88,7 @@
 </script>
 <button onclick="authenticate().then(loadClient)">authorize and load</button>
 <button onclick="execute()">execute</button>
-<button onclick="call()">call</button>
+<button onclick="call()">call (press this after auth then exe)</button>
 <body>
   <div id="random_player" />
   <div id="randomHeaders" />
