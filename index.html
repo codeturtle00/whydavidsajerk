@@ -28,7 +28,11 @@
 	for (i = 0; i<len; i++){
 		titleOfVideo = videos[i].snippet.title;
 		const regex = /[A-Za-z]+/gi;
-		wordsInTitle.push(titleOfVideo.match(regex));
+		wordsInTitle = titleOfVideo.match(regex);
+		for (k = 0; k<wordsInTitle.length; k++){
+			wordsInTitle.push(wordsInTitle[k]);
+		}
+		
 		
 	}
 
