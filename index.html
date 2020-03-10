@@ -21,7 +21,7 @@
   }
   // Make sure the client is loaded and sign-in is complete before calling this method.
   function call(){
-  	
+  	var numSentences = 20;
   	
 	var wordsInTitle = [];
 	len = videos.length;
@@ -34,14 +34,22 @@
 		}
 	}
 
-	var randomSenHeader = document.getElementById("randomSenh1");
+	var randomSenHeaderDiv = document.getElementById("randomHeaders");
 
-	str = "Whys David Dobrik a Jerk? Because ";
-	for (i = 0; i<5; i++){
-		str += " " + randomWordFromList(wordsInTitle);
+	for (i = 0; i<numSentences; i++){
+		str = "Whys David Dobrik a Jerk? Because ";
+		for (i = 0; i<5; i++){
+			str += " " + randomWordFromList(wordsInTitle);
 
-	} 
-	randomSenHeader.innerHTML = str;
+		} 
+
+		
+        var randomSenh1 = document.createElement("h1");
+
+		randomSenh1.innerHTML = str;
+		randomSenHeaderDiv.appendChild(randomSenh1);
+
+	}
 
   }
 
@@ -83,8 +91,8 @@
 <button onclick="authenticate().then(loadClient)">authorize and load</button>
 <button onclick="execute()">execute</button>
 <button onclick="call()">call</button>
+<div id="randomHeaders" />
 
-<h1 id = "randomSenh1">Click call after auth and execute to see this change</h1>
 <body>
   <div id="random_player" />
 </body>
