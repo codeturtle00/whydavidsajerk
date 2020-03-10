@@ -30,15 +30,15 @@
 		var words = title.split(" ");
 		lenn = words.length;
 		for (j = 0; j<lenn; j++){
-			wordsInTitle.push(words[j].trim(" !()!@#$%^&"));
+			wordsInTitle.push(words[j].trim(" !(@)#$%^&"));
 		}
 	}
 
 	var randomSenHeaderDiv = document.getElementById("randomHeaders");
 
-	for (i = 0; i<numSentences; i++){
+	for (j = 0; j<numSentences; j++){
 		str = "Whys David Dobrik a Jerk? Because ";
-		for (i = 0; i<5; i++){
+		for (k = 0; k<3; k++){
 			str += " " + randomWordFromList(wordsInTitle);
 
 		} 
@@ -91,9 +91,8 @@
 <button onclick="authenticate().then(loadClient)">authorize and load</button>
 <button onclick="execute()">execute</button>
 <button onclick="call()">call</button>
-<div id="randomHeaders" />
-
 <body>
   <div id="random_player" />
+  <div id="randomHeaders" />
 </body>
 
